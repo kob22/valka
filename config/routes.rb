@@ -1,4 +1,6 @@
 Valka::Application.routes.draw do
+  resources :teachers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
