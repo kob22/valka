@@ -1,0 +1,69 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "teachers"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "teachers" ("Degree", "Name", "Surname", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-08-18 13:18:31', '2012-08-18 13:18:31', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "teachers" ("Degree", "Name", "Surname", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-08-18 13:18:31', '2012-08-18 13:18:31', 298486374)
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTeacher Load (0.5ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "teachers" 
+Processing by TeachersController#create as HTML
+  Parameters: {"teacher"=>{"Degree"=>"MyString", "Name"=>"MyString", "Surname"=>"MyString", "email"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (21.9ms)[0m  INSERT INTO "teachers" ("Degree", "Name", "Surname", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["Degree", "MyString"], ["Name", "MyString"], ["Surname", "MyString"], ["created_at", Sat, 18 Aug 2012 13:18:31 UTC +00:00], ["email", "MyString"], ["updated_at", Sat, 18 Aug 2012 13:18:31 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/teachers/980190963
+Completed 302 Found in 31ms (ActiveRecord: 22.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "teachers" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "teachers" 
+Processing by TeachersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/teachers
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "teachers" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TeachersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered teachers/_form.html.erb (29.2ms)
+Completed 200 OK in 81ms (Views: 80.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" [0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TeachersController#new as HTML
+  Rendered teachers/_form.html.erb (3.3ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTeacher Load (0.1ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TeachersController#update as HTML
+  Parameters: {"teacher"=>{"Degree"=>"MyString", "Name"=>"MyString", "Surname"=>"MyString", "email"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/teachers/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
